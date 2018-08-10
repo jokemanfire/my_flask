@@ -1,0 +1,149 @@
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en-gb" class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lt IE 9]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+<title>主页</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+	<script type="text/javascript" src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/isotope.css" media="screen" />
+<link rel="stylesheet" href="/static/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/da-slider.css" />
+<!-- Owl Carousel Assets -->
+<link href="/static/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/styles.css" />
+<!-- Font Awesome -->
+<link href="/static/font/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand scroll-top logo"><b>漫游者</b></a>
+			</div>
+			<!--/.navbar-header-->
+			<div id="main-nav" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav" id="mainNav">
+					<li class="active"><a href="#home" class="scroll-link">主页</a></li>
+                    <li><a href="/" class="scroll-link">返回主页</a></li>
+				</ul>
+			</div>
+			<!--/.navbar-collapse-->
+		</nav>
+		<!--/.navbar-->
+	</div>
+	<!--/.container-->
+</header>
+<!--/.header-->
+<div id="#top"></div>
+<section id="home">
+	<div class="banner-container">
+	 <!--   <img src="images/banner-bg.jpg" alt="banner" />-->
+		<div class="container banner-content">
+			<div id="da-slider" class="da-slider">
+				<div class="da-slide">
+					<h2>旅游计划</h2>
+					<p>获得你旅游出行的正确方式！！</p>
+					<a href="#" class="da-link">了解更多</a>
+					<div class="da-img"></div>
+				</div>
+				<div class="da-slide">
+					<h2>惊奇的旅行</h2>
+					<p>旅途中你终生难忘！！</p>
+					<a href="#" class="da-link">了解更多</a>
+					<div class="da-img"></div>
+				</div>
+				<div class="da-slide">
+					<h2>最佳旅游行程 </h2>
+					<p>在我们的地方得到最好的交易</p>
+					<a href="#" class="da-link">了解更多</a>
+					<div class="da-img"></div>
+				</div>
+			<!--  <nav class="da-arrows">
+					<span class="da-arrows-prev"></span>
+					<span class="da-arrows-next"></span>
+				</nav> -->
+			</div>
+		</div>
+	</div>
+</section>
+<section id="introText">
+	<div class="container">
+		<div class="text-center">
+		<h1>给你一个很棒的假日包裹</h1>
+            <p>了解更多的资讯</p>
+		</div>
+	</div>
+</section>
+<section class="home-section page-section section appear clearfix secPad bg-gray">
+     <h2 style="text-align: center"> 我们提供的策略如下：</h2>
+    <div class="container">
+        <h3 style="color: yellowgreen"> 美食推荐：</h3>
+        {% for i in food %}
+              <div class="btn">
+           <p>店名： {{ i[0] }}</p>
+            <p>城区：{{ i[1] }}</p>
+            <p>地点: {{ i[2] }}</p>
+            <p>最低消费: {{ i[4] }}元</p>
+            <a href="{{ i[3] }}">更多信息</a>
+            <br>
+              </div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <h3 style="color: yellowgreen"> 景区推荐：</h3>
+         {% for i in view %}
+               <div class="btn">
+            <p>景区名： {{ i[0] }}</p>
+            <p>城区：{{ i[1] }}</p>
+            <p>地点: {{ i[2] }}</p>
+            <p>价格: {{ i[4] }}</p>
+            <a href="{{ i[3] }}">更多信息</a>
+             <br>
+               </div>
+        {% endfor %}
+    </div>
+        <div class="container">
+        <h3 style="color: yellowgreen"> 酒店推荐：</h3>
+            {% for i in hotel %}
+                <div class="btn">
+            <p>店名： {{ i[0] }}</p>
+            <p>城区：{{ i[1] }}</p>
+            <p>地点: {{ i[2] }}</p>
+            <p>最低消费: {{ i[4] }}元</p>
+            <a href="{{ i[3] }}">更多信息</a>
+                <br>
+                </div>
+             {% endfor %}
+    </div>
+    <div class="price" style="text-align: center">
+        <h2 style="color: red">最终预算大约为{{ totol_money }}元</h2>
+    </div>
+
+</section>
+
+</body>
+</html>
